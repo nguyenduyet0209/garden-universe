@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Web3 from 'web3'
+import jwtDecode from 'jwt-decode'
 
 import { setAuth } from '../app/slices/authSlice'
 import {
@@ -31,10 +32,15 @@ export async function onLoginWithWalletConnect({ provider, dispatch }) {
 
       // save ethAddress, nonce, accessToken to store and session
       if (accEthAddress && nonce && accessToken) {
+        const {
+          sub: { id },
+        } = jwtDecode(accessToken)
+
         const payload = {
           accessToken: accessToken,
           ethAddress: accEthAddress,
           nonce: nonce,
+          userId: id,
         }
 
         dispatch(setAuth(payload))
@@ -42,6 +48,7 @@ export async function onLoginWithWalletConnect({ provider, dispatch }) {
           accessToken,
           ethAddress: accEthAddress,
           nonce,
+          id,
         })
       }
     }
@@ -72,7 +79,6 @@ export async function loginWithSignature({ ethAddress, signature }) {
         wallet: 'metamask',
       },
     })
-    console.log('loginData?.data', loginData?.data)
     return loginData?.data
   } catch (error) {
     console.log(error)

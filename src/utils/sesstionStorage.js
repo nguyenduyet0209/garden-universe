@@ -11,10 +11,15 @@ export function setNonceToSession(nonce) {
   sessionStorage.setItem('NONCE', nonce)
 }
 
-export function setAuthToSession({ accessToken, ethAddress, nonce }) {
+export function setUserIdToSession(id) {
+  sessionStorage.setItem('USER_ID', id)
+}
+
+export function setAuthToSession({ accessToken, ethAddress, nonce, id }) {
   sessionStorage.setItem('ACCESS_TOKEN', accessToken)
   sessionStorage.setItem('ETH_ADDRESS', ethAddress)
   sessionStorage.setItem('NONCE', nonce)
+  sessionStorage.setItem('USER_ID', id)
 }
 
 export function setSignatureToSession(signature) {
@@ -32,6 +37,10 @@ export function getEthAddressInSession() {
 
 export function getNonceInSession() {
   return sessionStorage.getItem('NONCE')
+}
+
+export function getUserIdInSession() {
+  return sessionStorage.getItem('USER_ID')
 }
 
 export function getSignatureInSession() {
