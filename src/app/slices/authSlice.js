@@ -3,6 +3,7 @@ import {
   getAccessTokenInSession,
   getEthAddressInSession,
   getNonceInSession,
+  getUserIdInSession,
 } from '../../utils/sesstionStorage'
 
 const authSliceReducer = createSlice({
@@ -11,13 +12,18 @@ const authSliceReducer = createSlice({
     accessToken: getAccessTokenInSession() || null,
     ethAddress: getEthAddressInSession() || null,
     nonce: getNonceInSession() || null,
+    userId: getUserIdInSession() || null,
     isConnecting: false,
   },
   reducers: {
-    setAuth: (state, { payload: { accessToken, ethAddress, nonce } }) => {
+    setAuth: (
+      state,
+      { payload: { accessToken, ethAddress, nonce, userId } }
+    ) => {
       state.accessToken = accessToken
       state.ethAddress = ethAddress
       state.nonce = nonce
+      state.userId = userId
     },
     setIsConnecting: (state) => {
       state.isConnecting = true

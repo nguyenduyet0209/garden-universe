@@ -2,11 +2,14 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import logo from '../../../assets/images/logo.png'
-// import { AppContext } from '../../../context/AppProvider'
 import { AppContext } from '../../../context/AppProvider'
+import { useAppSelector } from '../../../app/hook'
 import './styles.scss'
 
 export default function Profile() {
+  const { userId } = useAppSelector((state) => state.auth)
+  console.log(userId)
+
   const { setIsDepositVisible, setIsWithdrawVisible } = useContext(AppContext)
 
   const handleOpenModalDeposit = () => {
