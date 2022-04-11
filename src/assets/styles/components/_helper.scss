@@ -40,11 +40,13 @@
   }
 
   .swiper-button-next:after{
-    background-image: url('../images/next.png');
+    // background-image: url('../images/next.png');
+    background-image: url('../../images/next.png');
   }
 
   .swiper-button-prev:after{
-    background-image: url('../images/next.png');
+    // background-image: url('../images/next.png');
+    background-image: url('../../images/next.png');
     transform: rotate(-180deg);
   }
 

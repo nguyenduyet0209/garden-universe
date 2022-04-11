@@ -1,51 +1,28 @@
 {
   "name": "garden-universe",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
-    "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "build:dev": "vite build --mode development",
-    "build:prod": "vite build --mode production",
-    "preview": "vite preview --port 8181"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "./**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "npm run prettier --write",
-      "npm run lint-fix",
-      "git add"
-    ]
-  },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.0",
-    "@walletconnect/web3-provider": "^1.7.7",
+    "@reduxjs/toolkit": "^1.8.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
     "antd": "^4.19.5",
     "axios": "^0.26.0",
-    "browserify-zlib": "^0.2.0",
-    "date-fns": "^2.28.0",
-    "events": "^3.3.0",
-    "js-cookie": "^3.0.1",
-    "process": "^0.11.10",
+    "env-cmd": "^10.1.0",
+    "node-sass": "^6.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-fullpage": "^0.1.19",
     "react-icons": "^4.3.1",
-    "react-redux": "^7.2.6",
+    "react-redux": "^7.2.8",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "^5.0.0",
-    "stream-browserify": "^3.0.0",
+    "react-scripts": "^4.0.3",
+    "stream": "0.0.2",
     "swiper": "^8.0.7",
     "web3": "^1.7.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.7",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jest": "^25.3.0",
@@ -56,8 +33,45 @@
     "lint-staged": "^12.1.2",
     "pre-commit": "^1.2.2",
     "prettier": "^2.5.1",
-    "prettier-eslint": "^13.0.0",
-    "sass": "^1.45.1",
-    "vite": "^2.8.0"
+    "prettier-eslint": "^13.0.0"
+  },
+  "scripts": {
+    "start": "env-cmd -f .env.development react-scripts start",
+    "start:prod": "env-cmd -f .env.production react-scripts start",
+    "lint": "eslint './src/*.{js,jsx}'",
+    "lint:fix": "eslint './src/*.{js,jsx}' --fix",
+    "build": "env-cmd -f .env.development react-scripts build",
+    "build:prod": "env-cmd -f .env.production react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|css|.jsx)": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.(js|.jsx)": [
+      "npm run lint:fix",
+      "npm run lint"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

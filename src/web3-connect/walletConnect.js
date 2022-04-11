@@ -72,7 +72,7 @@ export async function loginWithSignature({ ethAddress, signature }) {
         wallet: 'metamask',
       },
     })
-
+    console.log('loginData?.data', loginData?.data)
     return loginData?.data
   } catch (error) {
     console.log(error)

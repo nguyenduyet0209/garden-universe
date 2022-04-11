@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Section } from 'react-fullpage'
 import { Navigation, Pagination, A11y } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
 
 import { nftSlieList } from '../../../utils/constants'
 import TitleSection from '../../components/TitleSection'

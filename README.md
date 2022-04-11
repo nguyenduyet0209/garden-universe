@@ -19,7 +19,7 @@ Use the package management package is YARN or NPM here I use NPM (Sử dụng g�
 
 - Get repository:
 ```bash
-https://github.com/nguyenduyet0209/garden-universe.git
+https://gitlab.com/production-freelanc/garden-universe.git
 ```
 
 - Install package:

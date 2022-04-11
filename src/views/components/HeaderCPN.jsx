@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 // import WalletConnectProvider from '@walletconnect/web3-provider'
 import { Spin } from 'antd'
 import { Header } from 'react-fullpage'
@@ -16,7 +17,6 @@ import {
   resetIsConnecting,
   setIsConnecting,
 } from '../../app/slices/authSlice'
-import { Link } from 'react-router-dom'
 
 //  Create WalletConnect Provider
 // const provider = new WalletConnectProvider({
