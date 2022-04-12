@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Form, InputNumber, Modal, Spin } from 'antd'
 
 import { AppContext } from '../../../context/AppProvider'
@@ -19,6 +19,11 @@ export default function ModalDeposit() {
   const [contentSuccess, setContentSuccess] = useState('')
 
   const [form] = Form.useForm()
+  useEffect(() => {
+    form.setFieldsValue({
+      price: 100,
+    })
+  }, [form])
 
   const handleOk = () => {
     setIsDepositVisible(false)
@@ -71,12 +76,7 @@ export default function ModalDeposit() {
         ) : (
           <Form form={form} layout="vertical" onFinish={handleDeposit}>
             <Form.Item label="Your token amount" name="price">
-              <InputNumber
-                min={1}
-                allowClear
-                defaultValue={100}
-                className="input-price"
-              />
+              <InputNumber min={1} allowClear className="input-price" />
             </Form.Item>
             <div className="submit-form">
               <button className="deposit" htmlType="submit">

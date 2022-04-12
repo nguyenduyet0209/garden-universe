@@ -18,7 +18,7 @@ export default function ModalWithdraw() {
     form.setFieldsValue({
       amount: 100,
     })
-  }, [])
+  }, [form])
 
   const handleOk = () => {
     setIsWithdrawVisible(false)
