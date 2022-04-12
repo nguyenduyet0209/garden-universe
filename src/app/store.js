@@ -1,12 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { authApi } from './services/authApi'
 import authSliceReducer from './slices/authSlice'
 
 export const store = configureStore({
   reducer: {
+    [authApi.reducerPath]: authApi.reducer,
     auth: authSliceReducer,
   },
 
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(authApi.middleware),
 })
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors

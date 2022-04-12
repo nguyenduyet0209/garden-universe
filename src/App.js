@@ -6,6 +6,8 @@ import NoMatch from './views/pages/NoMatch/NoMatch'
 import { routeConfig } from './routes/routes'
 import AppProvider from './context/AppProvider'
 import PrivateRoute from './routes/PrivateRoute'
+import ModalDeposit from './views/components/modals/ModalDeposit'
+import ModalWithdraw from './views/components/modals/ModalWithdraw'
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
               <Route path="*" element={<NoMatch />} />
             </Routes>
           </Suspense>
+          <ModalDeposit />
+          <ModalWithdraw />
         </main>
       </div>
     </AppProvider>

@@ -4,5 +4,6 @@ export function NotificationCPN({ type, message, description }) {
     message: message,
     description: description,
     duration: 3,
+    placement: 'topRight',
   })
 }

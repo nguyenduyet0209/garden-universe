@@ -7,7 +7,7 @@ const baseQuery = fetchBaseQuery({
   baseUrl: API_BASE_URL,
 
   prepareHeaders: (headers, { getState }) => {
-    const token = getState().auth.token
+    const token = getState().auth.accessToken
     if (token) {
       headers.set('Authorization', `Bearer ${token}`)
     }
@@ -37,6 +37,15 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
         break
       case 400:
         console.log('bad request')
+        break
+      case 422:
+        console.log('result.error', result.error)
+        NotificationCPN({
+          type: 'error',
+          message: 'Error',
+          description:
+            result.error?.data?.error || result.error?.data?.amount[0],
+        })
         break
       case 403:
         console.log('Authorize')
