@@ -1,14 +1,19 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import logo from '../../../assets/images/logo.png'
+import {
+  useGetProfileQuery,
+  useGetTradeHistoryQuery,
+} from '../../../app/services/authApi'
 import { AppContext } from '../../../context/AppProvider'
 import { useAppSelector } from '../../../app/hook'
+import logo from '../../../assets/images/logo.png'
 import './styles.scss'
+import { Skeleton } from 'antd'
 
 export default function Profile() {
   const { userId } = useAppSelector((state) => state.auth)
-  console.log(userId)
+  const { data } = useGetProfileQuery(`ddapp/account/info/${userId}`)
 
   const { setIsDepositVisible, setIsWithdrawVisible } = useContext(AppContext)
 
@@ -19,6 +24,8 @@ export default function Profile() {
   const handleOpenModalWithdraw = () => {
     setIsWithdrawVisible(true)
   }
+
+  const tradeHistory = useGetTradeHistoryQuery('/ddapp/account/trade-history')
 
   return (
     <article className="profile">
@@ -38,20 +45,16 @@ export default function Profile() {
             <h3 className="title">Information</h3>
             <div className="desc">
               <div className="item">
-                <div>Item name</div>
-                <div>0x4bd996CB5afa2be97a111</div>
+                <div>ID</div>
+                <div>{data?.account?.id}</div>
+              </div>
+              <div className="item">
+                <div>Eth Address</div>
+                <div>{data?.account?.ethAddress}</div>
               </div>
               <div className="item">
                 <div>Balance</div>
-                <div>0 Token</div>
-              </div>
-              <div className="item">
-                <div>ID</div>
-                <div>ID name</div>
-              </div>
-              <div className="item">
-                <div>Password</div>
-                <div>******</div>
+                <div>{data?.account?.tokenBalance}</div>
               </div>
 
               <div className="profile-action">
@@ -71,7 +74,17 @@ export default function Profile() {
         <div className="container">
           <div className="profile-content">
             <h3 className="title">Transaction</h3>
-            <div className="desc"></div>
+            <Skeleton loading={tradeHistory.isLoading} active>
+              <div className="desc">
+                {tradeHistory?.data?.length > 0 &&
+                  tradeHistory?.data.map((item) => (
+                    <div className="item" key={item.transId}>
+                      <div>transId</div>
+                      <div>{item.transId}</div>
+                    </div>
+                  ))}
+              </div>
+            </Skeleton>
           </div>
         </div>
       </section>

@@ -1,0 +1,111 @@
+.modal-default{
+  padding-bottom: 0;
+
+  .ant-modal-header{
+    background: none;
+    background-image: url('../../../assets/images/bg-title.png');
+    padding: 0;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 55px;
+    width: 240px;
+    border: none;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    .ant-modal-title{
+      color: #fff;
+      line-height: 45px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .ant-modal-close{
+    position: absolute;
+    top: -15px;
+    right: 0;
+    background-color: red;
+    border-radius: 50%;
+
+    .ant-modal-close-x{
+      width: 30px;
+      height: 30px;
+      line-height: 32px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+
+  .ant-modal-content{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 30px;
+    border: 7px solid #f48e39;
+    border-bottom: 15px solid #f48e39;
+  }
+
+  .ant-modal-body{
+    padding: 0;
+  }
+
+  .ant-input-affix-wrapper{
+    background-color: #D09364;
+    border: none;
+
+    &:hover{
+      border-color: #D09364;
+    }
+  }
+
+  .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover{
+    border-color: #D09364;
+    border-right-width: 0;
+  }
+
+  .ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused{
+    box-shadow: none;
+  }
+
+  .ant-input{
+    background: none;
+    color: #fff;
+  }
+
+  .content-success{
+    text-align: center;
+
+    .icon{
+      font-size: 48px;
+      color: #00e400;
+    }
+  }
+
+  .input-price{
+    width: 100%;
+  }
+}
+
+.submit-form{
+  text-align: center;
+
+  button{
+    width: 120px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+
+    &.deposit{
+      background-color: #0086ec;
+    }
+    &.withdraw{
+      background-color: #f48e39;
+    }
+  }
+}
