@@ -24,20 +24,7 @@
     "react/react-in-jsx-scope": "off",
     "no-var": 2,
     "prefer-const": 2,
-    "prettier/prettier": [
-      "error",
-      {
-        "printWidth": 80,
-        "trailingComma": "es5",
-        "semi": false,
-        "semi-spacing": ["error", {"before": false, "after": true}],
-        "singleQuote": true,
-        "no-mixed-spaces-and-tabs": [
-          "error",
-          "smart-tabs"
-        ]
-      }
-    ],
+    'prettier/prettier': 0,
     "no-unused-vars": [
       "error",
       {

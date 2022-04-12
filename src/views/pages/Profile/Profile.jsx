@@ -79,6 +79,14 @@ export default function Profile() {
                 {tradeHistory?.data?.length > 0 &&
                   tradeHistory?.data.map((item) => (
                     <div className="item" key={item.transId}>
+                      <div>Action</div>
+                      {item.action>0?(<div>Deposit</div>):(<div>Withdraw</div>)}
+                      <div>Status</div>
+                      {item.status==0?(<div><p id="FailNoti">Fail</p></div>): item.status==1?(<div><p id="SucessNoti">Sucess</p></div>):(<div><p id="WaitNoti">Waiting</p></div>)}
+                      <div>Amount</div>
+                      <div>{item.token}</div>
+                      <div>Time</div>
+                      <div>{item.createdAt}</div>
                       <div>transId</div>
                       <div>{item.transId}</div>
                     </div>
