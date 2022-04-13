@@ -6,9 +6,6 @@ import StorySection from './StorySection'
 import GameplaySection from './GameplaySection'
 import NftItemsSection from './NftItemsSection'
 import RoadmapSection from './RoadmapSection'
-import TeamSection from './TeamSection'
-import AdvisorsSection from './AdvisorsSection'
-import PartnerSection from './PartnerSection'
 
 // Import Swiper styles
 import 'swiper/swiper.scss'
@@ -21,16 +18,7 @@ import './style.scss'
 export default function HomePage() {
   const options = {
     sectionClassName: 'section',
-    anchors: [
-      'hero',
-      'story',
-      'gameplay',
-      'nftitems',
-      'roadmap',
-      'team',
-      'advisor',
-      'partners',
-    ],
+    anchors: ['hero', 'story', 'gameplay', 'nftitems', 'roadmap'],
     scrollBar: false,
     navigation: false,
     verticalAlign: false,
@@ -48,9 +36,6 @@ export default function HomePage() {
         <GameplaySection />
         <NftItemsSection />
         <RoadmapSection />
-        <TeamSection />
-        <AdvisorsSection />
-        <PartnerSection />
       </SectionsContainer>
     </>
   )

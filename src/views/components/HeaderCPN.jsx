@@ -140,6 +140,11 @@ export default function HeaderCPN() {
               </li>
             )
           )}
+          <li>
+            <a href="/images/document.pdf" download>
+              Document
+            </a>
+          </li>
 
           <li className="eth-address">
             {ethAddress ? (

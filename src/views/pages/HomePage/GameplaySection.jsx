@@ -3,8 +3,6 @@ import { Section } from 'react-fullpage'
 
 import TitleSection from '../../components/TitleSection'
 
-import imgGameplay from '../../../assets/images/img-gameplay.png'
-
 export default function GameplaySection() {
   return (
     <Section>
@@ -13,7 +11,7 @@ export default function GameplaySection() {
           <TitleSection text="Gameplay" />
           <div className="box-general">
             <div className="img-general">
-              <img src={imgGameplay} alt="" />
+              <img src="/images/image-gameplay.png" alt="" />
             </div>
             <div className="general-desc">
               <h3 className="title">PvP - GUILD WAR</h3>
