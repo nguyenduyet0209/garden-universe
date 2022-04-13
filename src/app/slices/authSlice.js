@@ -1,4 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+
 import {
   getAccessTokenInSession,
   getEthAddressInSession,
@@ -6,9 +8,24 @@ import {
   getUserIdInSession,
 } from '../../utils/sesstionStorage'
 
+export const getEthSettingAction = createAsyncThunk(
+  'auth/getEthSettingAction',
+  async () => {
+    try {
+      const settingData = await axios.get('https://gardenuniverse.io/ddapp/eth')
+      return settingData?.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+)
+
 const authSliceReducer = createSlice({
   name: 'auth',
   initialState: {
+    allow_connect: null,
+    allow_deposit: null,
+    allow_withdraw: null,
     accessToken: getAccessTokenInSession() || null,
     ethAddress: getEthAddressInSession() || null,
     nonce: getNonceInSession() || null,
@@ -36,6 +53,15 @@ const authSliceReducer = createSlice({
     resetIsConnecting: (state) => {
       state.isConnecting = false
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getEthSettingAction.fulfilled, (state, action) => {
+      if (action.payload) {
+        state.allow_connect = action.payload.eth.allow_connect
+        state.allow_deposit = action.payload.eth.allow_deposit
+        state.allow_withdraw = action.payload.eth.allow_withdraw
+      }
+    })
   },
 })
 export const { setAuth, setIsConnecting, resetAuth, resetIsConnecting } =
