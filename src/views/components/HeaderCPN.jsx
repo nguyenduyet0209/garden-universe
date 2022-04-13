@@ -30,7 +30,9 @@ import {
 
 export default function HeaderCPN() {
   const dispatch = useAppDispatch()
-  const { ethAddress, isConnecting } = useAppSelector((state) => state.auth)
+  const { ethAddress, isConnecting, allow_connect } = useAppSelector(
+    (state) => state.auth
+  )
 
   // scroll to hero after refresh
   const myLink = useRef(null)
@@ -146,32 +148,34 @@ export default function HeaderCPN() {
             </a>
           </li>
 
-          <li className="eth-address">
-            {ethAddress ? (
-              <>
-                <a href="javascript:void(0)">{ethAddress}</a>
-                <ul className="sub-menu">
-                  <li>
-                    <Link to="/profile">Profile</Link>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)" onClick={onHandleDisconnect}>
-                      <FaSignOutAlt /> Disconnect
-                    </a>
-                  </li>
-                </ul>
-              </>
-            ) : (
-              <Spin spinning={isConnecting}>
-                <a
-                  href="javascript:void(0)"
-                  onClick={onLoginHandlerWithMetaMark}
-                >
-                  Connect Wallet
-                </a>
-              </Spin>
-            )}
-          </li>
+          {allow_connect && allow_connect == '1' && (
+            <li className="eth-address">
+              {ethAddress ? (
+                <>
+                  <a href="javascript:void(0)">{ethAddress}</a>
+                  <ul className="sub-menu">
+                    <li>
+                      <Link to="/profile">Profile</Link>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" onClick={onHandleDisconnect}>
+                        <FaSignOutAlt /> Disconnect
+                      </a>
+                    </li>
+                  </ul>
+                </>
+              ) : (
+                <Spin spinning={isConnecting}>
+                  <a
+                    href="javascript:void(0)"
+                    onClick={onLoginHandlerWithMetaMark}
+                  >
+                    Connect Wallet
+                  </a>
+                </Spin>
+              )}
+            </li>
+          )}
         </ul>
       </div>
     </Header>

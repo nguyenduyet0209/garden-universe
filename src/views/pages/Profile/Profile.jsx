@@ -15,7 +15,10 @@ import logo from '../../../assets/images/logo.png'
 import './styles.scss'
 
 export default function Profile() {
-  const { userId } = useAppSelector((state) => state.auth)
+  const { userId, allow_deposit, allow_withdraw } = useAppSelector(
+    (state) => state.auth
+  )
+
   const { data } = useGetProfileQuery(`ddapp/account/info/${userId}`)
 
   const { setIsDepositVisible, setIsWithdrawVisible } = useContext(AppContext)
@@ -99,12 +102,20 @@ export default function Profile() {
               </div>
 
               <div className="profile-action">
-                <button className="deposit" onClick={handleOpenModalDeposit}>
-                  deposit
-                </button>
-                <button className="withdraw" onClick={handleOpenModalWithdraw}>
-                  withdraw
-                </button>
+                {allow_deposit && allow_deposit == '1' && (
+                  <button className="deposit" onClick={handleOpenModalDeposit}>
+                    deposit
+                  </button>
+                )}
+
+                {allow_withdraw && allow_withdraw == '1' && (
+                  <button
+                    className="withdraw"
+                    onClick={handleOpenModalWithdraw}
+                  >
+                    withdraw
+                  </button>
+                )}
               </div>
             </div>
           </div>
