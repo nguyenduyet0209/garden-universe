@@ -1,0 +1,12 @@
+.vscode
+node_modules
+.git
+build
+dist
+.dockerignore
+.editorconfig
+.eslintignore
+.eslintrc
+.gitignore
+Dockerfile
+README.md
