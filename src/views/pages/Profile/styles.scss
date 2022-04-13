@@ -43,7 +43,7 @@
       width: 50%;
       margin: 0 auto;
       background-color: #fff;
-      padding: 30px;
+      padding: 15px;
       border-radius: 30px;
       border: 7px solid #f48e39;
       border-bottom: 15px solid #f48e39;
@@ -69,6 +69,19 @@
             text-overflow: ellipsis;
             display: inline-block;
           }
+        }
+      }
+    }
+
+    .desc-transition{
+      max-height: 350px;
+      overflow-y: scroll;
+      border: 15px solid #f48e39;
+
+      &.desc{
+        .item{
+          padding: 15px;
+          background: #f5f5f5;
         }
       }
     }

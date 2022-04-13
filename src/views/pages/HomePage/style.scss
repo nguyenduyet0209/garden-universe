@@ -202,10 +202,11 @@ $white: #fff;
     .tab-basin{
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
 
       .slide-basin{
-        flex: 0 0 45%;
-        max-width: 45%;
+        flex: 0 0 60%;
+        max-width: 60%;
 
         .slide-item{
           text-align: center;
@@ -303,8 +304,33 @@ $white: #fff;
         border-radius: 30px;
         border: 10px solid #f48e39;
 
-        min-height: 145px;
+        min-height: 175px;
       }
+    }
+  }
+  .slide-roadmap{
+    padding: 0 15px;
+  }
+  .slide-roadmap-item{
+    .title{
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 20px;
+      color: #FBFBFB;
+      margin-bottom: 15px;
+      padding: 10px 30px;
+      border-radius: 30px;
+      background: #f48e39;
+    }
+
+    .content{
+      color: #380C0F;
+      padding: 15px 30px;
+      background: #fff;
+      border-radius: 30px;
+      border: 10px solid #f48e39;
+
+      min-height: 175px;
     }
   }
 
@@ -323,19 +349,21 @@ $white: #fff;
 
   @media (max-width: 768px){
     .box-roadmap{
+      height: 300px;
+      overflow-y: scroll;
+
       .roadmap-item{
         flex: 0 0 100%;
         max-width: 100%;
         margin-bottom: 15px;
 
-        display: none;
+        // display: none;
 
-        @for $x from 1 through 1 {
-          &:nth-child(#{$x}) {
-            display: block;
-          }
-        }
-
+        // @for $x from 1 through 1 {
+        //   &:nth-child(#{$x}) {
+        //     display: block;
+        //   }
+        // }
       }
     }
   }

@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Section } from 'react-fullpage'
-import { Navigation, Pagination, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react'
+import { Navigation, Pagination, A11y } from 'swiper'
 
-import { nftSlieList } from '../../../utils/constants'
+import {
+  nftAnimalList,
+  nftBasinList,
+  nftPlantList,
+} from '../../../utils/constants'
 import TitleSection from '../../components/TitleSection'
-
-import imgNftSlide from '../../../assets/images/img-nft-slide.png'
 
 export default function NftItemsSection() {
   const [tab, setTab] = useState('basin')
@@ -37,17 +39,15 @@ export default function NftItemsSection() {
               Thú bắt sâu
             </button>
             <button
-              className={tab === 'tree' ? 'active' : ''}
+              className={tab === 'plant' ? 'active' : ''}
               onClick={onClickTab}
-              data-id="tree"
-              disabled={tab === 'tree' ? true : false}
+              data-id="plant"
+              disabled={tab === 'plant' ? true : false}
             >
               Cây đặc biệt
             </button>
           </div>
           <div className="tab-content-nft">
-            {/* animal
-          tree */}
             {tab === 'basin' && (
               <div className="tab-basin">
                 <div className="slide-basin reset-slide">
@@ -58,24 +58,16 @@ export default function NftItemsSection() {
                     navigation
                     pagination={{ type: 'fraction', clickable: true }}
                   >
-                    {nftSlieList.map((item) => (
+                    {nftBasinList.map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="slide-item">
-                          <h3 className="title">{item.name}</h3>
                           <div className="image">
-                            <img src={imgNftSlide} alt="" />
+                            <img src={`/images/basin/${item.image}`} alt="" />
                           </div>
                         </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                </div>
-                <div className="desc-basin">
-                  Tất cả người chơi trong cùng 1 guild sẽ tham gia vào đánh
-                  boss. Sau khi kết thúc, phần thưởng sẽ được phân bổ theo %
-                  lượng damage người chơi gây ra. tất cả người chơi trong cùng 1
-                  guild sẽ tham gia vào đánh boss. Sau khi kết thúc, phần thưởng
-                  sẽ được phân bổ theo % lượng damage người chơi gây ra.
                 </div>
               </div>
             )}
@@ -90,28 +82,21 @@ export default function NftItemsSection() {
                     navigation
                     pagination={{ type: 'fraction', clickable: true }}
                   >
-                    {nftSlieList.map((item) => (
+                    {nftAnimalList.map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="slide-item">
-                          <h3 className="title">{item.name}</h3>
                           <div className="image">
-                            <img src={imgNftSlide} alt="" />
+                            <img src={`/images/animal/${item.image}`} alt="" />
                           </div>
                         </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
                 </div>
-                <div className="desc-basin">
-                  Tất cả người chơi trong cùng 1 guild sẽ tham gia vào đánh
-                  boss. Sau khi kết thúc, phần thưởng sẽ được phân bổ theo %
-                  lượng damage người chơi gây ra. tất cả người chơi trong cùng 1
-                  guild sẽ tham gia vào đánh boss. Sau khi kết thúc, phần thưởng
-                </div>
               </div>
             )}
 
-            {tab === 'tree' && (
+            {tab === 'plant' && (
               <div className="tab-basin">
                 <div className="slide-basin reset-slide">
                   <Swiper
@@ -121,23 +106,16 @@ export default function NftItemsSection() {
                     navigation
                     pagination={{ type: 'fraction', clickable: true }}
                   >
-                    {nftSlieList.map((item) => (
+                    {nftPlantList.map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="slide-item">
-                          <h3 className="title">{item.name}</h3>
                           <div className="image">
-                            <img src={imgNftSlide} alt="" />
+                            <img src={`/images/plant/${item.image}`} alt="" />
                           </div>
                         </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                </div>
-                <div className="desc-basin">
-                  Tất cả người chơi trong cùng 1 guild sẽ tham gia vào đánh
-                  boss. Sau khi kết thúc, phần thưởng sẽ được phân bổ theo %
-                  lượng damage người chơi gây ra. tất cả người chơi trong cùng 1
-                  guild sẽ tham gia vào đánh boss.
                 </div>
               </div>
             )}

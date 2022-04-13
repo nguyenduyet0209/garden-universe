@@ -75,22 +75,34 @@ export default function Profile() {
           <div className="profile-content">
             <h3 className="title">Transaction</h3>
             <Skeleton loading={tradeHistory.isLoading} active>
-              <div className="desc">
-                {tradeHistory?.data?.length > 0 &&
-                  tradeHistory?.data.map((item) => (
-                    <div className="item" key={item.transId}>
-                      <div>Action</div>
-                      {item.action>0?(<div>Deposit</div>):(<div>Withdraw</div>)}
-                      <div>Status</div>
-                      {item.status==0?(<div><p id="FailNoti">Fail</p></div>): item.status==1?(<div><p id="SucessNoti">Sucess</p></div>):(<div><p id="WaitNoti">Waiting</p></div>)}
-                      <div>Amount</div>
-                      <div>{item.token}</div>
-                      <div>Time</div>
-                      <div>{item.createdAt}</div>
-                      <div>transId</div>
-                      <div>{item.transId}</div>
-                    </div>
-                  ))}
+              <div className="box-transition">
+                <div className="desc desc-transition">
+                  {tradeHistory?.data?.length > 0 &&
+                    tradeHistory?.data.map((item) => (
+                      <div className="item" key={item.transId}>
+                        <div>Action</div>
+                        {item.action > 0 ? (
+                          <div>Deposit</div>
+                        ) : (
+                          <div>Withdraw</div>
+                        )}
+                        <div>Status</div>
+                        {item.status == 0 ? (
+                          <div id="FailNoti">Fail</div>
+                        ) : item.status == 1 ? (
+                          <div id="SucessNoti">Sucess</div>
+                        ) : (
+                          <div id="WaitNoti">Waiting</div>
+                        )}
+                        <div>Amount</div>
+                        <div>{item.token}</div>
+                        <div>Time</div>
+                        <div>{item.createdAt}</div>
+                        <div>transId</div>
+                        <div>{item.transId}</div>
+                      </div>
+                    ))}
+                </div>
               </div>
             </Skeleton>
           </div>
