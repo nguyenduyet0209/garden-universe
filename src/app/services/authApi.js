@@ -18,6 +18,20 @@ export const authApi = createApi({
       }),
       providesTags: ['authApi'],
     }),
+    getAccountGame: builder.query({
+      query: (pathUrl) => ({
+        url: pathUrl,
+        method: 'GET',
+      }),
+    }),
+    generateAccountGame: builder.mutation({
+      query: ({ payload }) => ({
+        url: '/ddapp/account/generate',
+        method: 'POST',
+        body: payload,
+      }),
+      invalidatesTags: ['authApi'],
+    }),
     depositWithHash: builder.mutation({
       query: ({ payload }) => ({
         url: '/ddapp/account/deposit',
@@ -40,6 +54,8 @@ export const authApi = createApi({
 export const {
   useGetProfileQuery,
   useGetTradeHistoryQuery,
+  useGetAccountGameQuery,
   useDepositWithHashMutation,
+  useGenerateAccountGameMutation,
   useWithdrawMutation,
 } = authApi
