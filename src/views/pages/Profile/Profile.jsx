@@ -1,15 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Skeleton } from 'antd'
 
 import {
+  useGenerateAccountGameMutation,
+  useGetAccountGameQuery,
   useGetProfileQuery,
   useGetTradeHistoryQuery,
 } from '../../../app/services/authApi'
 import { AppContext } from '../../../context/AppProvider'
 import { useAppSelector } from '../../../app/hook'
 import logo from '../../../assets/images/logo.png'
+
 import './styles.scss'
-import { Skeleton } from 'antd'
 
 export default function Profile() {
   const { userId } = useAppSelector((state) => state.auth)
@@ -26,6 +29,28 @@ export default function Profile() {
   }
 
   const tradeHistory = useGetTradeHistoryQuery('/ddapp/account/trade-history')
+  const accountGame = useGetAccountGameQuery('/game/me/info')
+
+  const [generateAccountGame] = useGenerateAccountGameMutation()
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const handleGenerateAccountGame = async () => {
+    const dataGenerate = await generateAccountGame({
+      payload: {},
+    })
+    if (dataGenerate.data) {
+      setUsername(dataGenerate.data.username)
+      setPassword(dataGenerate.data.password)
+    }
+  }
+  useEffect(() => {
+    if (
+      accountGame?.data?.account?.userName ||
+      accountGame?.data?.account?.passwordRaw
+    ) {
+      handleGenerateAccountGame()
+    }
+  }, [])
 
   return (
     <article className="profile">
@@ -55,6 +80,22 @@ export default function Profile() {
               <div className="item">
                 <div>Balance</div>
                 <div>{data?.account?.tokenBalance}</div>
+              </div>
+              <div className="item">
+                <div>Username</div>
+                <div>
+                  {accountGame?.data?.account?.userName
+                    ? accountGame?.data?.account?.userName
+                    : username}
+                </div>
+              </div>
+              <div className="item">
+                <div>Password</div>
+                <div>
+                  {accountGame?.data?.account?.passwordRaw
+                    ? accountGame?.data?.account?.passwordRaw
+                    : password}
+                </div>
               </div>
 
               <div className="profile-action">
