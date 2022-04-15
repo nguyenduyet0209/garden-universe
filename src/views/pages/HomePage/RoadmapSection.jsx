@@ -26,14 +26,14 @@ export default function RoadmapSection() {
               >
                 <SwiperSlide>
                   <div className="slide-roadmap-item">
-                    <h3 className="title">Quý 2</h3>
+                    <h3 className="title">Q 2</h3>
                     <div className="content">
                       <ul>
-                        <li>Game Skygarden</li>
-                        <li>Chế tạo vật phẩm</li>
+                        <li>Skygarden game</li>
+                        <li>Crafting items</li>
                         <li>Maket/Shop/Trade</li>
-                        <li>Nuôi gia súc</li>
-                        <li>Pet (thú cưng)</li>
+                        <li>Breeding</li>
+                        <li>Pet</li>
                         <li>Connecting/Social</li>
                       </ul>
                     </div>
@@ -44,9 +44,9 @@ export default function RoadmapSection() {
                     <h3 className="title">Quý 3</h3>
                     <div className="content">
                       <ul>
-                        <li>Củ quả đại chiến</li>
-                        <li>Vườn thủy cung</li>
-                        <li>Khu mỏ</li>
+                        <li>Fruits of war</li>
+                        <li>Garden aquarium</li>
+                        <li>Mine zone</li>
                       </ul>
                     </div>
                   </div>
@@ -56,8 +56,8 @@ export default function RoadmapSection() {
                     <h3 className="title">Quý 4</h3>
                     <div className="content">
                       <ul>
-                        <li>Hoàn thiện gameplay</li>
-                        <li>Cập nhật các tính năng mới</li>
+                        <li>Entire gameplay</li>
+                        <li>New feature updates</li>
                       </ul>
                     </div>
                   </div>
@@ -70,11 +70,11 @@ export default function RoadmapSection() {
                 <h3 className="title">Quý 2</h3>
                 <div className="content">
                   <ul>
-                    <li>Game Skygarden</li>
-                    <li>Chế tạo vật phẩm</li>
+                    <li>Skygarden game</li>
+                    <li>Crafting items</li>
                     <li>Maket/Shop/Trade</li>
-                    <li>Nuôi gia súc</li>
-                    <li>Pet (thú cưng)</li>
+                    <li>Breeding</li>
+                    <li>Pet</li>
                     <li>Connecting/Social</li>
                   </ul>
                 </div>
@@ -83,9 +83,9 @@ export default function RoadmapSection() {
                 <h3 className="title">Quý 3</h3>
                 <div className="content">
                   <ul>
-                    <li>Củ quả đại chiến</li>
-                    <li>Vườn thủy cung</li>
-                    <li>Khu mỏ</li>
+                    <li>Fruits of war</li>
+                    <li>Garden aquarium</li>
+                    <li>Mine zone</li>
                   </ul>
                 </div>
               </div>
@@ -93,8 +93,8 @@ export default function RoadmapSection() {
                 <h3 className="title">Quý 4</h3>
                 <div className="content">
                   <ul>
-                    <li>Hoàn thiện gameplay</li>
-                    <li>Cập nhật các tính năng mới</li>
+                    <li>Entire gameplay</li>
+                    <li>New feature updates</li>
                   </ul>
                 </div>
               </div>

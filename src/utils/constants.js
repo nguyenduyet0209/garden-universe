@@ -38,7 +38,7 @@ export const nftBasinList = [
   },
   {
     id: 2,
-    image: 'chau-crystal.png',
+    image: 'chau-diamond.png',
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ export const nftBasinList = [
   },
   {
     id: 4,
-    image: 'chau-diamond.png',
+    image: 'chau-lumi.png',
   },
   {
     id: 5,
@@ -54,89 +54,64 @@ export const nftBasinList = [
   },
   {
     id: 6,
+    image: 'chau-oc.png',
+  },
+  {
+    id: 7,
     image: 'chau-ruby.png',
   },
   {
-    id: 7,
+    id: 8,
     image: 'chau-w.png',
   },
   {
-    id: 8,
-    image: 'chau-luc-bao.png',
+    id: 9,
+    image: 'luc-bao.png',
   },
 ]
 
-export const nftAnimalList = [
-  {
-    id: 1,
-    image: 'bo-ngua.png',
-  },
-  {
-    id: 2,
-    image: 'bo-rua.png',
-  },
-  {
-    id: 3,
-    image: 'buom.png',
-  },
-  {
-    id: 4,
-    image: 'kien.png',
-  },
-  {
-    id: 5,
-    image: 'muoi.png',
-  },
-  {
-    id: 6,
-    image: 'oc-sen.png',
-  },
-  {
-    id: 7,
-    image: 'sau.png',
-  },
-]
+export const nftAnimalList = []
 
 export const nftPlantList = [
   {
     id: 1,
-    image: 'bap-cai-tim.png',
+    image: 'cay-01.png',
   },
   {
     id: 2,
-    image: 'ca-chua.png',
+    image: 'cay-02.png',
   },
   {
     id: 3,
-    image: 'ca-tim.png',
+    image: 'cay-03.png',
   },
   {
     id: 4,
-    image: 'cherry.png',
+    image: 'cay-04.png',
   },
   {
     id: 5,
-    image: 'hoa-hong-do.png',
+    image: 'cay-05.png',
   },
   {
     id: 6,
-    image: 'hoa-hong-tim.png',
+    image: 'cay-06.png',
   },
   {
     id: 7,
-    image: 'hoa-mao-ga.png',
+    image: 'cay-07.png',
   },
   {
     id: 8,
-    image: 'ot-chuong-do.png',
+    image: 'cay-08.png',
   },
   {
     id: 9,
-    image: 'lavender.png',
+    image: 'cay-09.png',
   },
   {
     id: 10,
-    image: 'kiwi.png',
+    image: 'cay-10.png',
   },
 ]
 

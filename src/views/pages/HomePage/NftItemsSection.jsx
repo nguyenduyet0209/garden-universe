@@ -74,25 +74,32 @@ export default function NftItemsSection() {
 
             {tab === 'animal' && (
               <div className="tab-basin">
-                <div className="slide-basin reset-slide">
-                  <Swiper
-                    modules={[Navigation, Pagination, A11y]}
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    navigation
-                    pagination={{ type: 'fraction', clickable: true }}
-                  >
-                    {nftAnimalList.map((item) => (
-                      <SwiperSlide key={item.id}>
-                        <div className="slide-item">
-                          <div className="image">
-                            <img src={`/images/animal/${item.image}`} alt="" />
+                {nftAnimalList.length > 0 ? (
+                  <div className="slide-basin reset-slide">
+                    <Swiper
+                      modules={[Navigation, Pagination, A11y]}
+                      spaceBetween={0}
+                      slidesPerView={1}
+                      navigation
+                      pagination={{ type: 'fraction', clickable: true }}
+                    >
+                      {nftAnimalList.map((item) => (
+                        <SwiperSlide key={item.id}>
+                          <div className="slide-item">
+                            <div className="image">
+                              <img
+                                src={`/images/animal/${item.image}`}
+                                alt=""
+                              />
+                            </div>
                           </div>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </div>
+                ) : (
+                  <div className="coming-soon">Coming soon</div>
+                )}
               </div>
             )}
 

@@ -19,12 +19,11 @@ export default function StorySection() {
             <div className="general-desc">
               <h3 className="title">Garden Universe</h3>
               <div className="desc">
-                Garden Universe là một vùng đất thần kỳ và nó nằm ở trong tâm
-                trí của chính chúng ta, nơi đây bạn sẽ không có sự thay đổi nào
-                về tuổi tác - Một lần nữa, bạn được quay trở lại với tâm trí của
-                một đứa trẻ. Bạn có thể tự do vui chơi, tự do khám phá, tự do
-                sáng tạo, tạo dựng nên một xứ sở thần tiên của chính mình. Hãy
-                cùng các nhân vật trong game khám phá xứ sở của MAGIC!
+                The Garden Universe is a magical land in our own minds where you
+                won&apos;t change your age - Once again, you&apos;re back in the
+                mind of a child. You are free to have fun, explore, be creative,
+                and create your own wonderland. Let&apos;s go on an adventure
+                with the game characters in the land of MAGIC!
               </div>
             </div>
           </div>
