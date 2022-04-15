@@ -110,6 +110,7 @@ $white: #fff;
         padding: 10px 30px;
         border-radius: 30px;
         background: #f48e39;
+        text-transform: capitalize;
       }
 
       .desc{
@@ -225,6 +226,12 @@ $white: #fff;
             }
           }
         }
+      }
+
+      .coming-soon{
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: capitalize;
       }
 
       .desc-basin{

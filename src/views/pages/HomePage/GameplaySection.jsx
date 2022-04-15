@@ -14,13 +14,14 @@ export default function GameplaySection() {
               <img src="/images/image-gameplay.png" alt="" />
             </div>
             <div className="general-desc">
-              <h3 className="title">PvP - GUILD WAR</h3>
+              <h3 className="title">nursery liningsR</h3>
               <div className="desc">
-                Tất cả người chơi trong cùng 1 guild sẽ tham gia vào đánh boss.
-                Sau khi kết thúc, phần thưởng sẽ được phân bổ theo % lượng
-                damage người chơi gây ra. tất cả người chơi trong cùng 1 guild
-                sẽ tham gia vào đánh boss. Sau khi kết thúc, phần thưởng sẽ được
-                phân bổ theo % lượng damage người chơi gây ra.
+                The maximum number of nursery linings that may be purchased is
+                the same as the maximum number of pots that can currently be
+                placed in the cloud layer. As an example: When there is just one
+                cloud layer that may be opened, in each cloud layer only a
+                maximum of 9 pots can be placed, and a total of 9 nursery
+                linings can be purchased.
               </div>
             </div>
           </div>
