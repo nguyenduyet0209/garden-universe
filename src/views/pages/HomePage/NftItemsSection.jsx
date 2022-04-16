@@ -28,7 +28,7 @@ export default function NftItemsSection() {
               data-id="basin"
               disabled={tab === 'basin' ? true : false}
             >
-              Hệ thống chậu
+              Pots
             </button>
             <button
               className={tab === 'animal' ? 'active' : ''}
@@ -36,7 +36,7 @@ export default function NftItemsSection() {
               data-id="animal"
               disabled={tab === 'animal' ? true : false}
             >
-              Thú bắt sâu
+              Pets
             </button>
             <button
               className={tab === 'plant' ? 'active' : ''}
@@ -44,7 +44,7 @@ export default function NftItemsSection() {
               data-id="plant"
               disabled={tab === 'plant' ? true : false}
             >
-              Cây đặc biệt
+              Plants
             </button>
           </div>
           <div className="tab-content-nft">

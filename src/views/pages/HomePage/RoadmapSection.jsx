@@ -20,7 +20,7 @@ export default function RoadmapSection() {
               <Swiper
                 modules={[Navigation, Pagination, A11y]}
                 spaceBetween={30}
-                slidesPerView={1.15}
+                slidesPerView={1}
                 navigation={false}
                 pagination={{ type: 'fraction', clickable: true }}
               >
@@ -41,7 +41,7 @@ export default function RoadmapSection() {
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="slide-roadmap-item">
-                    <h3 className="title">Quý 3</h3>
+                    <h3 className="title">Q 3</h3>
                     <div className="content">
                       <ul>
                         <li>Fruits of war</li>
@@ -53,7 +53,7 @@ export default function RoadmapSection() {
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="slide-roadmap-item">
-                    <h3 className="title">Quý 4</h3>
+                    <h3 className="title">Q 4</h3>
                     <div className="content">
                       <ul>
                         <li>Entire gameplay</li>
@@ -67,7 +67,7 @@ export default function RoadmapSection() {
           ) : (
             <div className="box-roadmap">
               <div className="roadmap-item">
-                <h3 className="title">Quý 2</h3>
+                <h3 className="title">Q 2</h3>
                 <div className="content">
                   <ul>
                     <li>Skygarden game</li>
@@ -80,7 +80,7 @@ export default function RoadmapSection() {
                 </div>
               </div>
               <div className="roadmap-item">
-                <h3 className="title">Quý 3</h3>
+                <h3 className="title">Q 3</h3>
                 <div className="content">
                   <ul>
                     <li>Fruits of war</li>
@@ -90,7 +90,7 @@ export default function RoadmapSection() {
                 </div>
               </div>
               <div className="roadmap-item">
-                <h3 className="title">Quý 4</h3>
+                <h3 className="title">Q 4</h3>
                 <div className="content">
                   <ul>
                     <li>Entire gameplay</li>

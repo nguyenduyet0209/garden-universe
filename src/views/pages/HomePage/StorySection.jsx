@@ -23,7 +23,7 @@ export default function StorySection() {
                 won&apos;t change your age - Once again, you&apos;re back in the
                 mind of a child. You are free to have fun, explore, be creative,
                 and create your own wonderland. Let&apos;s go on an adventure
-                with the game characters in the land of MAGIC!
+                with the game characters in the land of GardenUniverse!
               </div>
             </div>
           </div>

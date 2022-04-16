@@ -14,7 +14,7 @@ export default function GameplaySection() {
               <img src="/images/image-gameplay.png" alt="" />
             </div>
             <div className="general-desc">
-              <h3 className="title">nursery liningsR</h3>
+              <h3 className="title">nursery linings</h3>
               <div className="desc">
                 The maximum number of nursery linings that may be purchased is
                 the same as the maximum number of pots that can currently be
