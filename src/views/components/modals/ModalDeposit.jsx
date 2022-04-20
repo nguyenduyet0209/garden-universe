@@ -6,7 +6,7 @@ import { AppContext } from '../../../context/AppProvider'
 import './style.scss'
 import { CheckOutlined } from '@ant-design/icons'
 import detectProvider from '../../../web3-connect/detectProvider'
-import { DepositWeb3 } from '../../../web3-connect/deposit'
+import { DepositWeb3 } from '../../../tronweb-connect/deposit'
 import { useAppSelector } from '../../../app/hook'
 import { useDepositWithHashMutation } from '../../../app/services/authApi'
 
