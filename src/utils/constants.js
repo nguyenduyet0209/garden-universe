@@ -1,6 +1,9 @@
 export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
-// export const API_BASE_URL = 'https://api.gardenuniverse.io/'
+export const MAIN_CONTRACT = process.env.REACT_APP_MAIN_CONTRACT
+export const ADDRESS_RECEIVER_DEPOSIT =
+  process.env.REACT_APP_ADDRESS_RECEIVER_DEPOSIT
 
+// export const API_BASE_URL = 'https://api.gardenuniverse.io/'
 export const menuList = [
   {
     id: 1,
