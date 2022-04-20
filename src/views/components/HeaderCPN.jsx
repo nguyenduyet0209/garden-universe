@@ -9,8 +9,8 @@ import { FaAlignJustify, FaSignOutAlt, FaTimes } from 'react-icons/fa'
 import { useAppDispatch, useAppSelector } from '../../app/hook'
 import { menuList } from '../../utils/constants'
 
-import { onLoginWithWalletConnect } from '../../web3-connect/walletConnect'
-import detectProvider from '../../web3-connect/detectProvider'
+import { onLoginWithWalletConnect } from '../../tronweb-connect/walletConnect'
+import detectProvider from '../../tronweb-connect/detectProvider'
 import { resetSession } from '../../utils/sesstionStorage'
 import {
   resetAuth,
@@ -59,15 +59,15 @@ export default function HeaderCPN() {
       dispatch(setIsConnecting())
       const provider = detectProvider()
       if (provider) {
-        if (provider !== window.ethereum) {
+        if (provider !== window.tronWeb) {
           console.error(
             'Not window.ethereum provider. Do you have multiple wallet installed ?'
           )
         }
         // setIsConnecting(true)
-        await provider.request({
-          method: 'eth_requestAccounts',
-        })
+        // await provider.request({
+        //   method: 'eth_requestAccounts',
+        // })
         // setIsConnecting(false)
       }
       onLoginWithWalletConnect({ provider, dispatch })
@@ -147,7 +147,6 @@ export default function HeaderCPN() {
               Document
             </a>
           </li>
-
           {allow_connect && allow_connect == '1' && (
             <li className="eth-address">
               {ethAddress ? (

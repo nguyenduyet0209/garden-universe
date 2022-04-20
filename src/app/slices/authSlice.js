@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { API_BASE_URL } from '../../utils/constants'
 
 import {
   getAccessTokenInSession,
@@ -12,7 +13,7 @@ export const getEthSettingAction = createAsyncThunk(
   'auth/getEthSettingAction',
   async () => {
     try {
-      const settingData = await axios.get('https://gardenuniverse.io/ddapp/eth')
+      const settingData = await axios.get(`${API_BASE_URL}ddapp/eth`)
       return settingData?.data
     } catch (error) {
       console.log(error)
