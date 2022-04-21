@@ -13,4 +13,10 @@ export const routeConfig = [
     component: lazy(() => import('../views/pages/Profile/Profile')),
     isProtected: true,
   },
+  {
+    id: 'Game',
+    path: '/game',
+    component: lazy(() => import('../views/pages/Game/Game')),
+    isProtected: true,
+  },
 ]

@@ -19,6 +19,7 @@
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^4.0.3",
+    "react-unity-webgl": "^8.8.0",
     "stream": "0.0.2",
     "swiper": "^8.0.7",
     "tronweb": "^4.1.0",

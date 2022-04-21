@@ -5,8 +5,12 @@ import { API_BASE_URL } from '../../utils/constants'
 import {
   getAccessTokenInSession,
   getEthAddressInSession,
+  getGameVersionInSession,
   getNonceInSession,
+  getTokenAddressInSession,
   getUserIdInSession,
+  setGameVersionToSession,
+  setTokenAddressToSession,
 } from '../../utils/sesstionStorage'
 
 export const getEthSettingAction = createAsyncThunk(
@@ -14,6 +18,8 @@ export const getEthSettingAction = createAsyncThunk(
   async () => {
     try {
       const settingData = await axios.get(`${API_BASE_URL}ddapp/eth`)
+      setGameVersionToSession(settingData?.data?.game?.version)
+      setTokenAddressToSession(settingData?.data?.eth?.token_address)
       return settingData?.data
     } catch (error) {
       console.log(error)
@@ -31,6 +37,8 @@ const authSliceReducer = createSlice({
     ethAddress: getEthAddressInSession() || null,
     nonce: getNonceInSession() || null,
     userId: getUserIdInSession() || null,
+    gameVersion: getGameVersionInSession() || null,
+    token_address: getTokenAddressInSession() || null,
     isConnecting: false,
   },
   reducers: {
@@ -61,6 +69,8 @@ const authSliceReducer = createSlice({
         state.allow_connect = action.payload.eth.allow_connect
         state.allow_deposit = action.payload.eth.allow_deposit
         state.allow_withdraw = action.payload.eth.allow_withdraw
+        state.gameVersion = action.payload.game.version
+        state.token_address = action.payload.eth.token_address
       }
     })
   },

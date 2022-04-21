@@ -22,6 +22,14 @@ export function setAuthToSession({ accessToken, ethAddress, nonce, id }) {
   sessionStorage.setItem('USER_ID', id)
 }
 
+export function setGameVersionToSession(gameVersion) {
+  sessionStorage.setItem('GAME_VERSION', gameVersion)
+}
+
+export function setTokenAddressToSession(token_address) {
+  sessionStorage.setItem('TOKEN_ADDRESS', token_address)
+}
+
 export function setSignatureToSession(signature) {
   sessionStorage.setItem('SIGNATURE', signature)
 }
@@ -45,6 +53,14 @@ export function getUserIdInSession() {
 
 export function getSignatureInSession() {
   return sessionStorage.getItem('SIGNATURE')
+}
+
+export function getGameVersionInSession() {
+  return sessionStorage.getItem('GAME_VERSION')
+}
+
+export function getTokenAddressInSession() {
+  return sessionStorage.getItem('TOKEN_ADDRESS')
 }
 
 export function resetSession() {
