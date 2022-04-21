@@ -143,6 +143,9 @@ export default function HeaderCPN() {
             )
           )}
           <li>
+            <Link to="/game">Game</Link>
+          </li>
+          <li>
             <a href="/images/document.pdf" download>
               Document
             </a>

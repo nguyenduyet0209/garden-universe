@@ -1,0 +1,28 @@
+.game{
+  padding: 45px 15px 30px;
+  .game-header{
+    margin-bottom: 30px;
+
+    .logo{
+      width: 200px;
+      line-height: 0;
+      margin: 0 auto;
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  .game-webgl{
+    background: #f48e39;
+    height: calc(100vh - 210px);
+
+    canvas{
+      &#unity-canvas-1{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
